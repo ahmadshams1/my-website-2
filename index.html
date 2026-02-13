@@ -1,390 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmad Walid | Personal Site</title>
-  <meta name="description" content="وب‌سایت شخصی احمد ولید — درباره من، هدف‌ها، و گالری عکس‌ها" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Walid</title>
   <style>
     :root{
-      --bg: #07070a;
-      --panel: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --gold: #ffd86a;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 18px;
+      --bg:#f0e7da;      /* مثل رنگ کرمی */
+      --text:#1a1a1a;
+      --muted:#5b5b5b;
+      --dark:#2f2a24;    /* دکمه‌های پایین */
+      --dark2:#3b342d;
+      --radius:18px;
     }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1100px 500px at 20% -10%, rgba(255,216,106,.18), transparent 60%),
-        radial-gradient(900px 500px at 110% 10%, rgba(255,179,0,.10), transparent 55%),
-        radial-gradient(800px 520px at 50% 120%, rgba(120,200,255,.10), transparent 60%),
-        var(--bg);
-      overflow-x:hidden;
+      background:var(--bg);
+      color:var(--text);
     }
 
-    a{ color:inherit; text-decoration:none; }
-
-    .wrap{
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 18px 16px 60px;
-    }
-
-    /* NAV */
-    .nav{
+    /* Top bar */
+    .top{
       position: sticky;
       top: 0;
-      z-index: 20;
-      padding: 12px 0;
+      z-index: 50;
+      background: rgba(240,231,218,.92);
       backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(7,7,10,.75), rgba(7,7,10,.35));
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .navin{
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      padding: 10px 14px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 10px;
+      gap:10px;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight: 900;
-      letter-spacing: .3px;
+      font-weight:900;
+      letter-spacing:.4px;
     }
-    .badge{
-      width:38px; height:38px; border-radius:12px;
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.10);
       display:grid; place-items:center;
-      background: rgba(255,216,106,.10);
-      border: 1px solid rgba(255,216,106,.28);
-      color: var(--gold);
-      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+      font-weight:900;
     }
-    .links{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .links a{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .links a:hover{
-      border-color: rgba(255,216,106,.35);
-      color: var(--text);
+    .icons{
+      display:flex; gap:10px; align-items:center;
+      color:var(--muted);
+      font-size:18px;
+      user-select:none;
     }
 
-    /* CARDS */
-    .card{
-      background: var(--panel);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    /* HERO */
+    /* Hero image section */
     .hero{
-      margin-top: 16px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 14px;
+      position:relative;
+      height: 52vh;
+      min-height: 360px;
+      background:#000;
+      overflow:hidden;
     }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter: contrast(1.02) saturate(1.05);
+      transform: scale(1.02);
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.15) 55%, rgba(0,0,0,.05));
+    }
+    .heroText{
+      position:absolute;
+      left:16px; right:16px; bottom:18px;
+      color:#fff;
+      text-align:center;
+    }
+    .heroText h1{
+      margin:0;
+      font-size:40px;
+      letter-spacing:.6px;
+      text-shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+    .heroText p{
+      margin:10px 0 0;
+      color: rgba(255,255,255,.85);
+      line-height:1.6;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    .heroL{ padding: 22px; }
-    .kicker{
-      display:inline-flex;
-      gap:8px; align-items:center;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,216,106,.30);
-      background: rgba(255,216,106,.10);
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 800;
+    /* Content section like “Our Location” */
+    .section{
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 24px 16px 120px;
+      text-align:center;
     }
-    h1{
-      margin: 14px 0 10px;
-      font-size: 42px;
-      line-height: 1.1;
+    .title{
+      margin: 14px 0 0;
+      font-size: 28px;
+      letter-spacing: .5px;
+      color: #2f2a24;
     }
-    @media (max-width: 520px){ h1{ font-size: 34px; } }
-
-    .sub{
+    .subtitle{
+      margin: 10px 0 0;
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #6b6157;
+      text-transform: uppercase;
+    }
+    .box{
+      margin: 14px auto 0;
+      max-width: 520px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.45);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .addr{
       margin: 0;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 16px;
     }
-
-    .heroR{ padding: 18px; display:grid; gap: 12px; }
-    .profile{
-      display:flex; gap: 14px; align-items:center;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
+    .phone{
+      margin: 12px 0 0;
+      font-size: 22px;
+      font-weight: 900;
+      color: #1a1a1a;
     }
-    .avatar{
-      width: 92px; height: 92px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,216,106,.32);
-      background: rgba(255,216,106,.06);
-      box-shadow: 0 18px 50px rgba(0,0,0,.45);
-    }
-    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .who h2{ margin:0; font-size: 18px; }
-    .who p{ margin:6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 
-    .chips{
+    /* gallery row */
+    .gallery{
+      margin-top: 18px;
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
-    @media (max-width: 520px){
-      .chips{ grid-template-columns: 1fr; }
-    }
-    .chip{
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* SECTION */
-    .section{ margin-top: 14px; }
-    .head{
-      padding: 14px 18px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-    }
-    .head h3{ margin:0; font-size: 16px; }
-    .head small{ color: var(--muted); }
-    .body{ padding: 18px; }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-    .tile{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-    }
-    .tile h4{ margin:0 0 8px; font-size: 15px; }
-    .tile p{ margin:0; color: var(--muted); line-height: 1.7; font-size: 14px; }
-
-    /* GALLERY */
-    .gallery{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 900px){
-      .gallery{ grid-template-columns: 1fr; }
+    @media (max-width:720px){
+      .gallery{grid-template-columns:1fr}
     }
     .shot{
-      border-radius: 18px;
+      border-radius: var(--radius);
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.2);
-      min-height: 320px;
-      position: relative;
+      border: 1px solid rgba(0,0,0,.08);
+      background:#fff;
+      aspect-ratio: 4 / 3;
     }
-    .shot img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .cap{
-      position:absolute;
-      left:12px; right:12px; bottom:12px;
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-      font-weight: 800;
-    }
-    .tag{
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,216,106,.30);
-      background: rgba(255,216,106,.10);
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
+    .shot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
-    footer{
-      margin-top: 18px;
+    /* bottom buttons like the sample site */
+    .bottomBar{
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 14px;
+      z-index: 60;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .btn{
+      padding: 14px 10px;
+      border-radius: 999px;
+      background: var(--dark);
+      color: #fff;
       text-align:center;
-      color: rgba(255,255,255,.55);
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 40px rgba(0,0,0,.25);
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn.secondary{background: var(--dark2)}
+    .hint{
+      margin-top: 14px;
       font-size: 13px;
-      padding-top: 6px;
+      color: #6b6157;
+      line-height: 1.6;
     }
   </style>
 </head>
 
 <body>
-  <div class="nav">
-    <div class="navin">
-      <div class="brand">
-        <div class="badge">AW</div>
-        <div>Ahmad Walid</div>
-      </div>
-      <div class="links">
-        <a href="#about">درباره</a>
-        <a href="#goals">هدف‌ها</a>
-        <a href="#gallery">عکس‌ها</a>
-        <a href="#contact">تماس</a>
-      </div>
+
+  <div class="top">
+    <div class="brand">
+      <div class="logo">AW</div>
+      <div>Ahmad Walid</div>
+    </div>
+    <div class="icons" title="Menu">
+      <span>👤</span>
+      <span>≡</span>
     </div>
   </div>
 
-  <div class="wrap">
+  <!-- عکس بزرگ بالا -->
+  <section class="hero">
+    <!-- اگر این عکس مناسب نبود، می‌تونی -6.jpg را بذاری -->
+    <img src="-3.jpg" alt="Hero photo">
+    <div class="overlay"></div>
+    <div class="heroText">
+      <h1>Welcome</h1>
+      <p>این وب‌سایت شخصی من است — داستان، هدف‌ها و عکس‌ها</p>
+    </div>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="card heroL">
-        <div class="kicker">✨ وب‌سایت شخصی من</div>
-        <h1>سلام! من احمد ولید هستم 👋</h1>
-        <p class="sub">
-          دانش‌آموز در آمریکا، با هدف ساختن آینده قوی. من روی رشد شخصی، درس و مهارت‌ها کار می‌کنم.
-        </p>
-      </div>
+  <main class="section">
+    <div class="title">About Me</div>
+    <div class="subtitle">AHMAD WALID</div>
 
-      <div class="card heroR">
-        <div class="profile">
-          <div class="avatar">
-            <!-- مهم: اسم عکس تو در Repo این است: -3.jpg -->
-            <img src="-3.jpg" alt="Ahmad Walid Photo">
-          </div>
-          <div class="who">
-            <h2>Ahmad Walid</h2>
-            <p>افغانستان 🇦🇫 → آمریکا 🇺🇸<br>قدم‌به‌قدم به سمت موفقیت.</p>
-          </div>
-        </div>
+    <div class="box">
+      <p class="addr">
+        من از افغانستان هستم و در آمریکا زندگی می‌کنم.<br/>
+        هدفم ساختن آینده قوی و موفق است.
+      </p>
+      <div class="phone">Instagram: @yourusername</div>
+    </div>
 
-        <div class="chips">
-          <div class="chip">⭐ هدفمند و منظم</div>
-          <div class="chip">📚 یادگیری هر روز</div>
-          <div class="chip">💪 تلاش + صبر</div>
-          <div class="chip">🌍 آینده بهتر</div>
-        </div>
-      </div>
-    </section>
+    <div class="gallery">
+      <div class="shot"><img src="-3.jpg" alt="photo 1"></div>
+      <div class="shot"><img src="-6.jpg" alt="photo 2"></div>
+    </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="card section">
-      <div class="head">
-        <h3>درباره من</h3>
-        <small>My Story</small>
-      </div>
-      <div class="body">
-        <div class="grid">
-          <div class="tile">
-            <h4>من کی هستم؟</h4>
-            <p>
-              من احمد ولید هستم. از افغانستان آمده‌ام و در آمریکا درس می‌خوانم.
-              هدفم این است که زندگی و آینده قوی بسازم.
-            </p>
-          </div>
-          <div class="tile">
-            <h4>چرا این سایت؟</h4>
-            <p>
-              این وب‌سایت جای من است: هدف‌ها، مسیر زندگی و عکس‌ها.
-              می‌خواهم پیشرفت خودم را ثبت کنم.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <p class="hint">
+      اگر عکس‌ها باز هم نیامد، یعنی GitHub Pages هنوز آپدیت نشده یا اسم فایل‌ها فرق دارد.
+      (اما با -3.jpg و -6.jpg باید بیاید چون همین‌ها داخل Repo تو هستند)
+    </p>
+  </main>
 
-    <!-- GOALS -->
-    <section id="goals" class="card section">
-      <div class="head">
-        <h3>هدف‌ها</h3>
-        <small>Goals</small>
-      </div>
-      <div class="body">
-        <div class="grid">
-          <div class="tile">
-            <h4>🎓 درس و آینده</h4>
-            <p>فارغ‌شدن قوی، بهتر شدن در انگلیسی، و آماده‌گی برای آینده.</p>
-          </div>
-          <div class="tile">
-            <h4>💼 موفقیت</h4>
-            <p>ساختن مسیر موفقیت با نظم، تلاش و تصمیم‌های درست.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="card section">
-      <div class="head">
-        <h3>گالری عکس‌ها</h3>
-        <small>Photos</small>
-      </div>
-      <div class="body">
-        <div class="gallery">
-          <div class="shot">
-            <img src="-3.jpg" alt="Photo 1">
-            <div class="cap">
-              <div>عکس ۱</div>
-              <div class="tag">-3.jpg</div>
-            </div>
-          </div>
-
-          <div class="shot">
-            <img src="-6.jpg" alt="Photo 2">
-            <div class="cap">
-              <div>عکس ۲</div>
-              <div class="tag">-6.jpg</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card section">
-      <div class="head">
-        <h3>تماس</h3>
-        <small>Contact</small>
-      </div>
-      <div class="body">
-        <div class="grid">
-          <div class="tile">
-            <h4>📩 ایمیل</h4>
-            <p>اینجا ایمیل خودت را بنویس</p>
-          </div>
-          <div class="tile">
-            <h4>📱 شبکه‌های اجتماعی</h4>
-            <p>Instagram: @yourusername<br>WhatsApp: +1-xxx-xxx-xxxx</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>© 2026 Ahmad Walid — ساخته شده با GitHub Pages</footer>
+  <div class="bottomBar">
+    <a class="btn" href="#top">Home</a>
+    <a class="btn secondary" href="mailto:your@email.com">Email</a>
+    <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
   </div>
+
 </body>
 </html>
