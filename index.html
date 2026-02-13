@@ -1,48 +1,69 @@
-.more-menu{
-  position: relative;
-  display: inline-block;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahxxad Shams</title>
 
-.more-btn{
-  background: none;
-  border: 1px solid rgba(255,255,255,.2);
-  color: inherit;
-  font-size: 20px;
-  padding: 6px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+    }
 
-.more-btn:hover{
-  background: rgba(255,255,255,.1);
-}
+    /* Navbar */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 25px;
+      background:#020617;
+      border-bottom:1px solid #1e293b;
+    }
 
-/* لیست مخفی */
-.more-list{
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background: #111;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 10px;
-  min-width: 140px;
-  overflow: hidden;
-  z-index: 100;
-}
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      letter-spacing:1px;
+    }
 
-/* لینک‌ها */
-.more-list a{
-  display: block;
-  padding: 8px 12px;
-  font-size: 14px;
-}
+    .menu{
+      display:flex;
+      gap:20px;
+    }
 
-.more-list a:hover{
-  background: rgba(255,255,255,.1);
-}
+    .menu a{
+      text-decoration:none;
+      color:#cbd5f5;
+      font-size:15px;
+      transition:0.2s;
+    }
 
-/* وقتی موس رفت روش → باز شود */
-.more-menu:hover .more-list{
-  display: block;
-}
+    .menu a:hover{
+      color:white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+
+    <!-- Name -->
+    <div class="logo">Ahxxad Shams</div>
+
+    <!-- Menu -->
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+      <a href="#">⋮</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
