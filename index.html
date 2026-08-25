@@ -2,802 +2,765 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mr Landscaping — Premium Outdoor Care</title>
-  <meta name="description" content="Mr Landscaping — premium lawn care, mulch, trimming, cleanups, and outdoor upgrades. Fast quotes, clean finish."/>
-  <style>
-    :root{
-      --bg:#f6fbf7;
-      --card:#ffffff;
-      --ink:#0c1410;
-      --muted:#3b5846;
-      --line:rgba(10,20,16,.10);
-      --shadow: 0 18px 60px rgba(0,0,0,.10);
-      --radius:22px;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Mobile Detailing</title>
 
-      --g1:#16a34a;
-      --g2:#22c55e;
-      --g3:#0ea5e9;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 460px at 10% -10%, rgba(34,197,94,.14), transparent 60%),
-        radial-gradient(820px 420px at 95% 0%, rgba(14,165,233,.10), transparent 55%),
-        var(--bg);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1200px; margin:0 auto; padding:0 20px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.7);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      cursor:pointer; user-select:none;
-      font-weight:750;
-      transition:.2s;
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn-primary{
-      background: linear-gradient(135deg, var(--g1), var(--g2));
-      color:white;
-      border-color: transparent;
-      box-shadow: 0 18px 45px rgba(34,197,94,.22);
-    }
-    .btn-dark{
-      background:#0c1410;
-      color:white;
-      border-color:transparent;
-      box-shadow: 0 18px 45px rgba(0,0,0,.14);
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px; border-radius:999px;
-      background: rgba(34,197,94,.10);
-      border:1px solid rgba(34,197,94,.20);
-      font-weight:800;
-      color:#0c3b22;
-    }
-    .dot{width:9px; height:9px; border-radius:50%; background:var(--g2); box-shadow:0 0 0 6px rgba(34,197,94,.18)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(246,251,247,.75);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:14px 0;
-    }
-    .brand{display:flex; align-items:center; gap:12px; min-width: 260px;}
-    .mark{
-      width:44px; height:44px; border-radius:16px;
-      background: linear-gradient(135deg, var(--g1), var(--g2));
-      color:white;
-      display:grid; place-items:center;
-      font-weight:950;
-      letter-spacing:.5px;
-      box-shadow: 0 16px 40px rgba(34,197,94,.22);
-    }
-    .brand b{display:block}
-    .brand small{color:var(--muted)}
-    .tabs{
-      display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .tab{
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.65);
-      color: var(--muted);
-      font-weight:800;
-      cursor:pointer;
-      transition:.2s;
-    }
-    .tab:hover{transform: translateY(-1px)}
-    .tab.active{
-      color: var(--ink);
-      border-color: rgba(34,197,94,.30);
-      background: rgba(34,197,94,.12);
-    }
-    .nav-cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-
-    /* HERO */
-    .hero{padding:26px 0 10px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .glass{
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(255,255,255,.55);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero-left{padding:26px}
-    h1{
-      margin:14px 0 10px;
-      font-size:54px;
-      letter-spacing:-1.2px;
-      line-height:1.02;
-    }
-    .sub{color:var(--muted); max-width: 65ch; margin:0 0 16px; font-size:16px}
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap}
-    .stats{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-    }
-    .stat{
-      border-radius:18px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.65);
-      padding:12px;
-    }
-    .stat .n{font-weight:950; font-size:18px; color:#0c3b22}
-    .stat .t{color:var(--muted); font-size:12px; margin-top:2px}
-
-    .hero-right{
-      min-height: 430px;
-      display:grid;
-      place-items:stretch;
-    }
-    .video{
-      position:relative;
-      width:100%;
-      height:100%;
-      min-height: 430px;
-      background:
-        linear-gradient(180deg, rgba(12,20,16,.05), rgba(12,20,16,.55)),
-        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=75");
-      background-size: cover;
-      background-position:center;
-    }
-    .video::after{
-      content:"";
-      position:absolute; inset:-100px;
-      background: radial-gradient(circle at 20% 15%, rgba(34,197,94,.22), transparent 55%);
-      pointer-events:none;
-    }
-    .hero-card{
-      position:absolute;
-      left:16px; right:16px; bottom:16px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.55);
-      background: rgba(255,255,255,.72);
-      backdrop-filter: blur(12px);
-      padding:14px;
-      display:flex; justify-content:space-between; gap:10px; align-items:center;
-    }
-    .hero-card b{display:block}
-    .hero-card small{color:var(--muted)}
-    .callpill{
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.25);
-      background: rgba(34,197,94,.12);
-      font-weight:900;
-      white-space:nowrap;
-    }
-
-    /* SECTIONS */
-    section{padding:44px 0}
-    .title-row{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;
-      margin-bottom:14px;
-    }
-    .title-row h2{margin:0; font-size:28px; letter-spacing:-.3px}
-    .title-row p{margin:0; color:var(--muted); max-width: 70ch}
-
-    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    .card{
-      padding:18px;
-      border-radius:22px;
-      background: rgba(255,255,255,.78);
-      border:1px solid var(--line);
-      box-shadow: 0 14px 45px rgba(0,0,0,.06);
-      transition:.2s;
-    }
-    .card:hover{transform: translateY(-2px)}
-    .icon{
-      width:46px; height:46px; border-radius:18px;
-      display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(22,163,74,.14), rgba(34,197,94,.14));
-      border:1px solid rgba(34,197,94,.22);
-      font-weight:950;
-      color:#0c3b22;
-      margin-bottom:10px;
-      user-select:none;
-    }
-    .card h3{margin:0 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px}
-
-    /* Projects */
-    .projects{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:12px;
-    }
-    .proj{
-      grid-column: span 4;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.78);
-      box-shadow: 0 14px 45px rgba(0,0,0,.06);
-      cursor:pointer;
-      transition:.2s;
-      min-height: 260px;
-      position:relative;
-    }
-    .proj:hover{transform: translateY(-2px)}
-    .proj.big{grid-column: span 8}
-    .proj img{width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.03); transition:.35s}
-    .proj:hover img{transform:scale(1.08)}
-    .label{
-      position:absolute; left:12px; bottom:12px;
-      padding:10px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.78);
-      border:1px solid rgba(255,255,255,.65);
-      backdrop-filter: blur(10px);
-      font-weight:900;
-      color:#0c1410;
-      display:inline-flex; gap:10px; align-items:center;
-    }
-
-    /* Pricing */
-    .price{
-      border-radius:22px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.78);
-      box-shadow: 0 14px 45px rgba(0,0,0,.06);
-      padding:18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .price.featured{
-      border-color: rgba(34,197,94,.35);
-      background: linear-gradient(180deg, rgba(34,197,94,.10), rgba(255,255,255,.82));
-    }
-    .tag{
-      position:absolute; top:14px; right:14px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.25);
-      background: rgba(34,197,94,.12);
-      font-weight:950;
-      color:#0c3b22;
-      font-size:12px;
-    }
-    .money{font-size:34px; font-weight:950; letter-spacing:-.8px; margin:10px 0 6px; color:#0c3b22}
-    .muted{color:var(--muted); font-size:13px}
-    ul.clean{margin:12px 0 0; padding:0; list-style:none}
-    ul.clean li{padding:10px 0; border-top:1px dashed var(--line); color:var(--muted); display:flex; gap:10px; align-items:flex-start}
-    ul.clean li:first-child{border-top:none; padding-top:0}
-    .check{
-      width:22px; height:22px; border-radius:10px;
-      background: rgba(34,197,94,.12);
-      border:1px solid rgba(34,197,94,.22);
-      display:grid; place-items:center;
-      font-weight:950;
-      color:#0c3b22;
-      flex:0 0 auto;
-      margin-top:1px;
-      user-select:none;
-    }
-
-    /* Contact */
-    .form{
-      display:grid; gap:10px; margin-top:10px;
-    }
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.85);
-      outline:none;
-      font-size:14px;
-    }
-    textarea{min-height:110px; resize:vertical}
-    input:focus, textarea:focus, select:focus{border-color: rgba(34,197,94,.40)}
-    .two{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
-
-    /* PAGES */
-    .page{display:none}
-    .page.active{display:block}
-
-    /* Modal */
-    .modal{
-      position:fixed; inset:0;
-      background: rgba(0,0,0,.65);
-      display:none;
-      align-items:center; justify-content:center;
-      padding:16px;
-      z-index:200;
-    }
-    .modal.open{display:flex}
-    .modal-card{
-      max-width: 980px; width: 100%;
-      border-radius: 22px;
-      overflow:hidden;
-      background: white;
-      box-shadow: 0 25px 90px rgba(0,0,0,.35);
-      position:relative;
-    }
-    .modal-card img{width:100%; height: 560px; object-fit:cover; display:block}
-    .x{
-      position:absolute; top:12px; right:12px;
-      width:46px; height:46px; border-radius:18px;
-      background: rgba(255,255,255,.82);
-      border:1px solid rgba(0,0,0,.10);
-      display:grid; place-items:center;
-      font-weight:950;
-      cursor:pointer;
-      user-select:none;
-    }
-    .modal-foot{
-      padding:14px;
-      border-top:1px solid rgba(0,0,0,.08);
-      display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap;
-      color:var(--muted);
-    }
-
-    /* Footer */
-    footer{
-      padding:28px 0 44px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr}
-      h1{font-size:44px}
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-      .projects{grid-template-columns: repeat(6, 1fr)}
-      .proj, .proj.big{grid-column: span 6}
-      .stats{grid-template-columns:1fr 1fr 1fr}
-    }
-    @media (max-width: 560px){
-      h1{font-size:36px}
-      .two{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr}
-      .modal-card img{height: 420px}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="mark">MR</div>
-          <div>
-            <b>Mr Landscaping</b>
-            <small>Premium Outdoor Care • Georgia</small>
-          </div>
-        </div>
 
-        <div class="tabs" id="tabs">
-          <button class="tab active" data-page="home" type="button">Home</button>
-          <button class="tab" data-page="services" type="button">Services</button>
-          <button class="tab" data-page="projects" type="button">Projects</button>
-          <button class="tab" data-page="contact" type="button">Contact</button>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
 
-        <div class="nav-cta">
-          <a class="btn" href="tel:+10000000000">📞 Call</a>
-          <a class="btn btn-primary" href="#contactJump" onclick="go('contact')">Get Quote</a>
-        </div>
-      </div>
+      <a class="brand" href="#top">
+        <span class="brand-mark">E</span>
+        <span>ELITE MOBILE DETAILING</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#why-us">Why Elite</a>
+        <a href="#book" class="nav-cta">Book Now</a>
+      </nav>
+
+      <button class="menu-btn">☰</button>
+
     </div>
-  </div>
 
-  <!-- HOME PAGE -->
-  <main class="page active" id="home">
-    <header class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="glass hero-left">
-            <span class="chip"><span class="dot"></span> Fast quotes • Luxury finish • Clean edges</span>
-            <h1>Premium landscaping that makes your home look expensive.</h1>
-            <p class="sub">
-              Mr Landscaping provides clean, professional lawn care, mulch, trimming, seasonal cleanup, and pressure washing.
-              We focus on details, communication, and a premium finish every time.
-            </p>
-            <div class="hero-actions">
-              <button class="btn btn-primary" type="button" onclick="go('contact')">Get a Free Quote</button>
-              <a class="btn btn-dark" href="tel:+10000000000">Call Now</a>
-              <button class="btn" type="button" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Us</button>
-            </div>
-
-            <div class="stats">
-              <div class="stat">
-                <div class="n">Same-Day</div>
-                <div class="t">availability (when open)</div>
-              </div>
-              <div class="stat">
-                <div class="n">5-Star</div>
-                <div class="t">service mindset</div>
-              </div>
-              <div class="stat">
-                <div class="n">Clean</div>
-                <div class="t">edges & finishing</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass hero-right">
-            <div class="video">
-              <div class="hero-card">
-                <div>
-                  <b>Weekly Lawn Care</b>
-                  <small>Stripe mowing • edging • cleanup</small>
-                </div>
-                <div class="callpill">Text: (000) 000-0000</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section id="why">
-      <div class="container">
-        <div class="title-row">
-          <div>
-            <h2>Why Mr Landscaping</h2>
-            <p>People don’t just buy mowing — they buy reliability, communication, and premium finish.</p>
-          </div>
-          <button class="btn" type="button" onclick="go('projects')">View Projects</button>
-        </div>
-
-        <div class="grid3">
-          <div class="card">
-            <div class="icon">🛡️</div>
-            <h3>Reliable</h3>
-            <p>On-time arrival with clear communication. No surprises.</p>
-          </div>
-          <div class="card">
-            <div class="icon">✨</div>
-            <h3>Luxury Detail</h3>
-            <p>Clean edges, straight lines, tidy beds. We finish like pros.</p>
-          </div>
-          <div class="card">
-            <div class="icon">💬</div>
-            <h3>Fast Quotes</h3>
-            <p>Text or call and get a quick quote — we reply fast.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:14px" class="grid2">
-          <div class="card">
-            <div class="icon">🧰</div>
-            <h3>Professional equipment</h3>
-            <p>Better tools = cleaner cut and better results.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🏡</div>
-            <h3>Residential & commercial</h3>
-            <p>Homes, rentals, small businesses — we do it all.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="title-row">
-          <div>
-            <h2>Popular packages</h2>
-            <p>Simple pricing examples (change numbers for your real market).</p>
-          </div>
-          <button class="btn" type="button" onclick="go('contact')">Request exact price</button>
-        </div>
-
-        <div class="grid3">
-          <div class="price">
-            <h3>Basic</h3>
-            <div class="muted">Simple clean cut</div>
-            <div class="money">$45 <span class="muted">/ visit</span></div>
-            <ul class="clean">
-              <li><span class="check">✓</span> Mowing</li>
-              <li><span class="check">✓</span> Light edging</li>
-              <li><span class="check">✓</span> Blow cleanup</li>
-            </ul>
-            <div style="margin-top:12px">
-              <button class="btn btn-dark" type="button" onclick="go('contact')">Choose Basic</button>
-            </div>
-          </div>
-
-          <div class="price featured">
-            <div class="tag">Most Popular</div>
-            <h3>Premium</h3>
-            <div class="muted">Luxury finish & detail</div>
-            <div class="money">$75 <span class="muted">/ visit</span></div>
-            <ul class="clean">
-              <li><span class="check">✓</span> Stripe mowing</li>
-              <li><span class="check">✓</span> Full edging</li>
-              <li><span class="check">✓</span> Trim up to 2 bushes</li>
-            </ul>
-            <div style="margin-top:12px">
-              <button class="btn btn-primary" type="button" onclick="go('contact')">Choose Premium</button>
-            </div>
-          </div>
-
-          <div class="price">
-            <h3>Luxury</h3>
-            <div class="muted">Full makeover visit</div>
-            <div class="money">$140 <span class="muted">/ visit</span></div>
-            <ul class="clean">
-              <li><span class="check">✓</span> Premium + haul away</li>
-              <li><span class="check">✓</span> Mulch refresh (small beds)</li>
-              <li><span class="check">✓</span> Pressure wash add-on</li>
-            </ul>
-            <div style="margin-top:12px">
-              <button class="btn btn-dark" type="button" onclick="go('contact')">Choose Luxury</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- SERVICES PAGE -->
-  <main class="page" id="services">
-    <section>
-      <div class="container">
-        <div class="title-row">
-          <div>
-            <h2>Services</h2>
-            <p>Everything you need for curb appeal, maintenance, and premium outdoor finish.</p>
-          </div>
-          <button class="btn btn-primary" type="button" onclick="go('contact')">Get Quote</button>
-        </div>
-
-        <div class="grid3">
-          <div class="card"><div class="icon">⛳</div><h3>Lawn care</h3><p>Mowing, edging, trimming, cleanup — clean lines every visit.</p></div>
-          <div class="card"><div class="icon">🪵</div><h3>Mulch & pine straw</h3><p>Fresh mulch/pine straw, bed shaping, weed control plan.</p></div>
-          <div class="card"><div class="icon">🌲</div><h3>Trimming & pruning</h3><p>Bushes, hedges, small trees — neat and professional.</p></div>
-          <div class="card"><div class="icon">🍂</div><h3>Seasonal cleanup</h3><p>Leaf removal, storm debris, haul away, deep cleanup.</p></div>
-          <div class="card"><div class="icon">💦</div><h3>Pressure washing</h3><p>Driveways, patios, walkways — instant curb appeal.</p></div>
-          <div class="card"><div class="icon">🧱</div><h3>Bed borders</h3><p>Clean borders, stone/edge lines, refresh designs.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="title-row">
-          <div>
-            <h2>How it works</h2>
-            <p>Fast, simple, and professional — customers love this process.</p>
-          </div>
-        </div>
-
-        <div class="grid3">
-          <div class="card"><div class="icon">1</div><h3>Request</h3><p>Call, text, or send the form with your address and needs.</p></div>
-          <div class="card"><div class="icon">2</div><h3>Quote</h3><p>We send a fair quote fast. Clear pricing, no surprise.</p></div>
-          <div class="card"><div class="icon">3</div><h3>Deliver</h3><p>We show up and deliver premium finish. Photos after.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- PROJECTS PAGE -->
-  <main class="page" id="projects">
-    <section>
-      <div class="container">
-        <div class="title-row">
-          <div>
-            <h2>Projects</h2>
-            <p>Click any photo to open full screen. Replace these with your own photos later.</p>
-          </div>
-          <button class="btn btn-primary" type="button" onclick="go('contact')">Book now</button>
-        </div>
-
-        <div class="projects" id="projectsGrid">
-          <div class="proj big" data-label="Luxury backyard upgrade">
-            <img alt="Project 1" src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Luxury backyard upgrade</div>
-          </div>
-          <div class="proj" data-label="Mulch refresh & bed cleanup">
-            <img alt="Project 2" src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Mulch refresh</div>
-          </div>
-          <div class="proj" data-label="Perfect lines & edging">
-            <img alt="Project 3" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Perfect lines</div>
-          </div>
-          <div class="proj" data-label="Walkway pressure wash">
-            <img alt="Project 4" src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Pressure wash</div>
-          </div>
-          <div class="proj" data-label="Trimming & shaping">
-            <img alt="Project 5" src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Trimming</div>
-          </div>
-          <div class="proj big" data-label="Curb appeal upgrade">
-            <img alt="Project 6" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=75"/>
-            <div class="label"><span class="dot"></span> Curb appeal</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- CONTACT PAGE -->
-  <main class="page" id="contact">
-    <section>
-      <div class="container">
-        <div class="title-row" id="contactJump">
-          <div>
-            <h2>Get a free quote</h2>
-            <p>Fill the form. For now it shows an alert (later we connect to email/WhatsApp).</p>
-          </div>
-          <span class="chip"><span class="dot"></span> Reply fast • Clear pricing</span>
-        </div>
-
-        <div class="grid2">
-          <div class="card">
-            <h3 style="margin:0 0 6px;">Request service</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">Add your address and what you need.</p>
-
-            <form class="form" id="quoteForm">
-              <div class="two">
-                <input required name="name" placeholder="Full Name" />
-                <input required name="phone" placeholder="Phone Number" />
-              </div>
-              <div class="two">
-                <input name="email" placeholder="Email (optional)" />
-                <input name="city" placeholder="City / Zip" />
-              </div>
-
-              <div class="two">
-                <select name="service">
-                  <option>Lawn Care</option>
-                  <option>Mulch / Pine Straw</option>
-                  <option>Trimming</option>
-                  <option>Seasonal Cleanup</option>
-                  <option>Pressure Washing</option>
-                  <option>Full Makeover</option>
-                </select>
-                <select name="frequency">
-                  <option>One-time</option>
-                  <option>Weekly</option>
-                  <option>Bi-weekly</option>
-                  <option>Monthly</option>
-                </select>
-              </div>
-
-              <textarea name="details" placeholder="Describe what you need (mowing, mulch color, trimming, cleanup...)."></textarea>
-
-              <button class="btn btn-primary" type="submit">Send request</button>
-              <div class="muted">Or call/text: <b>+1 (000) 000-0000</b> • Email: <b>mrlandscaping@email.com</b></div>
-            </form>
-          </div>
-
-          <div class="card">
-            <h3 style="margin:0 0 6px;">Direct contact</h3>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Fastest way: text your zip code + service needed.
-            </p>
-
-            <ul class="clean">
-              <li><span class="check">✓</span> Phone: +1 (000) 000-0000</li>
-              <li><span class="check">✓</span> Email: mrlandscaping@email.com</li>
-              <li><span class="check">✓</span> Hours: Mon–Sat • 8AM–6PM</li>
-              <li><span class="check">✓</span> Service: Residential & Commercial</li>
-            </ul>
-
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn btn-dark" href="tel:+10000000000">Call</a>
-              <a class="btn" href="sms:+10000000000">Text</a>
-              <button class="btn" type="button" onclick="go('services')">See services</button>
-            </div>
-
-            <div style="margin-top:14px" class="chip"><span class="dot"></span> Tip: Add 6 real before/after photos</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODAL -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Project preview">
-      <div class="x" id="x">✕</div>
-      <img id="modalImg" alt="Preview" src=""/>
-      <div class="modal-foot">
-        <span id="modalLabel">Preview</span>
-        <span>© <span id="year"></span> Mr Landscaping</span>
-      </div>
+    <div class="mobile-menu">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why-us">Why Elite</a>
+      <a href="#book">Book Now</a>
     </div>
-  </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <p class="eyebrow">
+          PROFESSIONAL MOBILE CAR DETAILING
+        </p>
+
+        <h1>
+          Your Car.<br>
+          <span>Your Location.</span><br>
+          Our Detail.
+        </h1>
+
+        <p class="hero-copy">
+          Premium mobile detailing designed around your schedule.
+          We come to you and make your vehicle look and feel its best.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#pricing" class="btn btn-primary">
+            View Packages
+          </a>
+
+          <a href="#book" class="btn btn-secondary">
+            Book Your Detail
+          </a>
+
+        </div>
+
+        <div class="hero-points">
+          <span>✓ Mobile Service</span>
+          <span>✓ Interior & Exterior</span>
+          <span>✓ Professional Finish</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro" id="services">
+
+      <div class="container">
+
+        <p class="eyebrow">DETAILING PACKAGES</p>
+
+        <h2>
+          Choose the clean your vehicle needs.
+        </h2>
+
+        <p class="section-copy">
+          From a simple refresh to a deep interior restoration,
+          Elite Mobile Detailing gives you clear package options
+          with straightforward pricing.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+    <section class="packages" id="pricing">
+
+      <div class="container package-grid">
+
+
+        <!-- BASIC -->
+        <article class="package-card">
+
+          <div class="package-top">
+
+            <span class="package-icon">🚿</span>
+
+            <div>
+              <p class="package-kicker">QUICK REFRESH</p>
+              <h3>Basic Detail</h3>
+            </div>
+
+          </div>
+
+          <div class="price-row">
+
+            <div>
+              <span>Sedan</span>
+              <strong>$79</strong>
+            </div>
+
+            <div>
+              <span>SUV</span>
+              <strong>$99</strong>
+            </div>
+
+            <div>
+              <span>Large</span>
+              <strong>$119</strong>
+            </div>
+
+          </div>
+
+          <div class="service-columns">
+
+            <div>
+
+              <h4>Interior</h4>
+
+              <ul>
+                <li>Light Vacuum</li>
+                <li>Dashboard Wipe Down</li>
+                <li>Center Console</li>
+                <li>Cup Holders</li>
+                <li>Door Panels</li>
+                <li>Floor Mats</li>
+                <li>Interior Windows</li>
+              </ul>
+
+            </div>
+
+            <div>
+
+              <h4>Exterior</h4>
+
+              <ul>
+                <li>Hand Wash</li>
+                <li>Wheels & Tires</li>
+                <li>Tire Shine</li>
+                <li>Exterior Windows</li>
+                <li>Hand Dry</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- INTERIOR DETAIL -->
+        <article class="package-card">
+
+          <div class="package-top">
+
+            <span class="package-icon">🧼</span>
+
+            <div>
+              <p class="package-kicker">INTERIOR ONLY</p>
+              <h3>Interior Detail</h3>
+            </div>
+
+          </div>
+
+          <div class="price-row">
+
+            <div>
+              <span>Sedan</span>
+              <strong>$129</strong>
+            </div>
+
+            <div>
+              <span>SUV</span>
+              <strong>$149</strong>
+            </div>
+
+            <div>
+              <span>Large</span>
+              <strong>$169</strong>
+            </div>
+
+          </div>
+
+          <ul class="full-list">
+
+            <li>Deep Vacuum</li>
+
+            <li>
+              Dashboard & Center Console
+            </li>
+
+            <li>Cup Holders</li>
+
+            <li>Door Panels</li>
+
+            <li>Vents</li>
+
+            <li>Door Jambs</li>
+
+            <li>Floor Mats</li>
+
+            <li>
+              Carpet & Mat Shampoo
+            </li>
+
+            <li>Seat Cleaning</li>
+
+            <li>
+              Fabric Seat Shampoo or Leather Cleaning
+            </li>
+
+            <li>Extraction</li>
+
+            <li>
+              Standard Stain Treatment
+            </li>
+
+            <li>Trunk Vacuum</li>
+
+            <li>Interior Windows</li>
+
+            <li>Air Freshener</li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- EXTERIOR DETAIL -->
+        <article class="package-card">
+
+          <div class="package-top">
+
+            <span class="package-icon">✨</span>
+
+            <div>
+              <p class="package-kicker">EXTERIOR ONLY</p>
+              <h3>Exterior Detail</h3>
+            </div>
+
+          </div>
+
+          <div class="price-row">
+
+            <div>
+              <span>Sedan</span>
+              <strong>$89</strong>
+            </div>
+
+            <div>
+              <span>SUV</span>
+              <strong>$109</strong>
+            </div>
+
+            <div>
+              <span>Large</span>
+              <strong>$129</strong>
+            </div>
+
+          </div>
+
+          <ul class="full-list">
+
+            <li>Hand Wash</li>
+
+            <li>Wheels & Tires</li>
+
+            <li>Tire Shine</li>
+
+            <li>Bug Removal</li>
+
+            <li>Exterior Windows</li>
+
+            <li>Hand Dry</li>
+
+            <li>
+              Spray Wax / Paint Protection
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- FULL DETAIL -->
+        <article class="package-card featured">
+
+          <div class="popular-badge">
+            MOST POPULAR
+          </div>
+
+          <div class="package-top">
+
+            <span class="package-icon">⭐</span>
+
+            <div>
+              <p class="package-kicker">
+                COMPLETE CLEAN
+              </p>
+
+              <h3>Full Detail</h3>
+            </div>
+
+          </div>
+
+
+          <div class="price-row">
+
+            <div>
+              <span>Sedan</span>
+              <strong>$179</strong>
+            </div>
+
+            <div>
+              <span>SUV</span>
+              <strong>$199</strong>
+            </div>
+
+            <div>
+              <span>Large</span>
+              <strong>$219</strong>
+            </div>
+
+          </div>
+
+
+          <div class="service-columns">
+
+
+            <div>
+
+              <h4>Interior</h4>
+
+              <ul>
+
+                <li>Deep Vacuum</li>
+
+                <li>
+                  Dashboard & Center Console
+                </li>
+
+                <li>Cup Holders</li>
+
+                <li>Door Panels</li>
+
+                <li>Vents</li>
+
+                <li>Door Jambs</li>
+
+                <li>Floor Mats</li>
+
+                <li>Seat Cleaning</li>
+
+                <li>
+                  Carpet & Mat Shampoo
+                </li>
+
+                <li>
+                  Fabric Seat Shampoo
+                </li>
+
+                <li>Extraction</li>
+
+                <li>Leather Cleaning</li>
+
+                <li>
+                  Standard Stain Treatment
+                </li>
+
+                <li>Trunk Vacuum</li>
+
+                <li>Interior Windows</li>
+
+                <li>Air Freshener</li>
+
+              </ul>
+
+            </div>
+
+
+            <div>
+
+              <h4>Exterior</h4>
+
+              <ul>
+
+                <li>Hand Wash</li>
+
+                <li>Wheels & Tires</li>
+
+                <li>Tire Shine</li>
+
+                <li>Bug Removal</li>
+
+                <li>Exterior Windows</li>
+
+                <li>Hand Dry</li>
+
+                <li>
+                  Spray Wax / Paint Protection
+                </li>
+
+              </ul>
+
+            </div>
+
+
+          </div>
+
+        </article>
+
+
+        <!-- DEEP DETAIL -->
+        <article class="package-card deep">
+
+          <div class="package-top">
+
+            <span class="package-icon">🥇</span>
+
+            <div>
+
+              <p class="package-kicker">
+                PREMIUM RESTORATION
+              </p>
+
+              <h3>Deep Detail</h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="price-row">
+
+            <div>
+              <span>Sedan</span>
+              <strong>$279+</strong>
+            </div>
+
+            <div>
+              <span>SUV</span>
+              <strong>$309+</strong>
+            </div>
+
+            <div>
+              <span>Large</span>
+              <strong>$339+</strong>
+            </div>
+
+          </div>
+
+
+          <p class="plus-note">
+
+            <strong>
+              Everything included in Full Detail, plus:
+            </strong>
+
+          </p>
+
+
+          <ul class="full-list">
+
+            <li>Extra-Deep Vacuum</li>
+
+            <li>
+              Deep Carpet Shampoo
+            </li>
+
+            <li>
+              Deep Fabric Seat Shampoo
+            </li>
+
+            <li>Deep Extraction</li>
+
+            <li>Steam Cleaning</li>
+
+            <li>
+              Deep Stain Treatment
+            </li>
+
+            <li>
+              Detailed Crevice Cleaning
+            </li>
+
+            <li>
+              Hard-to-Reach Area Cleaning
+            </li>
+
+            <li>
+              Deep Floor Mat Cleaning
+            </li>
+
+            <li>
+              Detailed Trunk Cleaning
+            </li>
+
+          </ul>
+
+
+          <p class="fine-print">
+
+            Deep Detail pricing may vary depending on
+            vehicle size and condition.
+
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY ELITE -->
+    <section class="why" id="why-us">
+
+      <div class="container why-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            WHY ELITE
+          </p>
+
+          <h2>
+            Professional detailing without the shop visit.
+          </h2>
+
+        </div>
+
+
+        <div class="benefits">
+
+          <div>
+
+            <span>01</span>
+
+            <h3>
+              We Come To You
+            </h3>
+
+            <p>
+              Convenient mobile service at your location.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>02</span>
+
+            <h3>
+              Clear Pricing
+            </h3>
+
+            <p>
+              Choose the package that fits your vehicle and needs.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>03</span>
+
+            <h3>
+              Detail-Focused
+            </h3>
+
+            <p>
+              Interior and exterior care with a professional finish.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+    <section class="cta" id="book">
+
+      <div class="container cta-box">
+
+        <p class="eyebrow">
+          READY TO BOOK?
+        </p>
+
+        <h2>
+          Give your vehicle the Elite treatment.
+        </h2>
+
+        <p>
+          Send us a message with your vehicle year,
+          make, model, and the package you want.
+          For Deep Detail, include a few photos so the
+          final price can be confirmed.
+        </p>
+
+
+        <div class="cta-actions">
+
+          <button
+            class="btn btn-primary"
+            id="copyBooking"
+          >
+            Copy Booking Message
+          </button>
+
+
+          <a
+            class="btn btn-secondary"
+            href="#pricing"
+          >
+            Review Packages
+          </a>
+
+        </div>
+
+
+        <p
+          class="copy-status"
+          id="copyStatus"
+        ></p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
 
   <footer>
-    <div class="container">
-      © <span id="year2"></span> <b>Mr Landscaping</b> — Premium Outdoor Care • Georgia
-      <span style="float:right;">Built for bookings 🌿</span>
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <div class="brand footer-brand">
+
+          <span class="brand-mark">
+            E
+          </span>
+
+          <span>
+            ELITE MOBILE DETAILING
+          </span>
+
+        </div>
+
+        <p>
+          Professional mobile car detailing.
+          We come to you.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-title">
+          Services
+        </p>
+
+        <a href="#pricing">
+          Basic Detail
+        </a>
+
+        <a href="#pricing">
+          Interior Detail
+        </a>
+
+        <a href="#pricing">
+          Exterior Detail
+        </a>
+
+        <a href="#pricing">
+          Full Detail
+        </a>
+
+        <a href="#pricing">
+          Deep Detail
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-title">
+          Booking
+        </p>
+
+        <a href="#book">
+          Book Your Detail
+        </a>
+
+        <a href="#pricing">
+          View Pricing
+        </a>
+
+      </div>
+
     </div>
+
+
+    <div class="container footer-bottom">
+
+      © <span id="year"></span>
+      Elite Mobile Detailing.
+      All rights reserved.
+
+    </div>
+
   </footer>
 
-  <script>
-    // Year
-    const y = new Date().getFullYear();
-    document.getElementById("year").textContent = y;
-    document.getElementById("year2").textContent = y;
 
-    // Pages / tabs
-    const pages = ["home","services","projects","contact"];
-    const tabEls = document.querySelectorAll(".tab");
-    function go(id){
-      pages.forEach(p=>{
-        document.getElementById(p).classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-      tabEls.forEach(t=> t.classList.toggle("active", t.dataset.page === id));
-      window.scrollTo({top:0, behavior:"smooth"});
-    }
-    tabEls.forEach(t=>{
-      t.addEventListener("click", ()=> go(t.dataset.page));
-    });
+  <script src="script.js"></script>
 
-    // Quote form demo
-    document.getElementById("quoteForm").addEventListener("submit", (e)=>{
-      e.preventDefault();
-      const data = new FormData(e.target);
-      alert(`Thanks, ${data.get("name") || "Customer"}! ✅\nRequest received for: ${data.get("service")}\nWe will reply fast.\n\n(Next step: connect this form to email/WhatsApp.)`);
-      e.target.reset();
-    });
-
-    // Modal for projects
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modalImg");
-    const modalLabel = document.getElementById("modalLabel");
-    const x = document.getElementById("x");
-
-    function openModal(src, label){
-      modalImg.src = src;
-      modalLabel.textContent = label || "Preview";
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden","false");
-    }
-    function closeModal(){
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden","true");
-      modalImg.src = "";
-    }
-    x.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-    document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
-
-    document.querySelectorAll(".proj").forEach(p=>{
-      p.addEventListener("click", ()=>{
-        const img = p.querySelector("img");
-        openModal(img.src, p.dataset.label);
-      });
-    });
-  </script>
 </body>
 </html>
