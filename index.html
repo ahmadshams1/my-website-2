@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Elite Mobile Detailing</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Elite Mobile Detailing
+  </title>
 
   <meta
     name="description"
-    content="Elite Mobile Detailing - Premium mobile car detailing. We come to you."
-  />
+    content="Elite Mobile Detailing - Professional mobile car detailing. We come to you."
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
-  />
+  >
+
 
   <style>
 
+
+    /* =========================
+       COLORS
+    ========================= */
+
     :root {
-      --black: #070707;
-      --black-2: #0d0d0d;
-      --black-3: #141414;
 
-      --white: #f8f5ee;
-      --muted: #aaa69d;
+      --black: #050505;
+      --black2: #0b0b0b;
+      --black3: #111111;
 
-      --gold: #d8b75c;
-      --gold-light: #f2d787;
+      --white: #f7f4ed;
 
-      --border: rgba(255,255,255,0.08);
-      --gold-border: rgba(216,183,92,0.30);
+      --gray: #aaa69e;
 
-      --radius: 24px;
+      --gold: #d9b85d;
+      --gold-light: #f2d98d;
+
+      --border:
+        rgba(255,255,255,0.08);
+
+      --gold-border:
+        rgba(217,184,93,0.35);
+
     }
+
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
+
     body {
-      background:
-        radial-gradient(
-          circle at 10% 0%,
-          rgba(216,183,92,0.09),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 100% 20%,
-          rgba(216,183,92,0.07),
-          transparent 25%
-        ),
-        var(--black);
+
+      background: var(--black);
 
       color: var(--white);
 
@@ -70,62 +102,99 @@
         sans-serif;
 
       line-height: 1.6;
+
+      overflow-x: hidden;
+
     }
+
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
 
-    button {
-      font-family: inherit;
+
+    ul {
+
+      list-style: none;
+
     }
+
 
     .container {
-      width: min(1180px, 92%);
+
+      width: min(
+        1180px,
+        92%
+      );
+
       margin: auto;
+
     }
 
-    /* HEADER */
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
       background:
-        rgba(7,7,7,0.90);
+        rgba(5,5,5,0.92);
 
       backdrop-filter:
-        blur(16px);
+        blur(15px);
 
       border-bottom:
         1px solid var(--border);
+
     }
 
+
     .navbar {
+
       height: 78px;
 
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
+
+      justify-content: space-between;
+
     }
 
+
     .logo {
+
       display: flex;
+
       align-items: center;
+
       gap: 12px;
+
+      font-size: 0.90rem;
 
       font-weight: 800;
 
       letter-spacing: 0.08em;
 
-      font-size: 0.9rem;
     }
 
-    .logo-mark {
-      width: 42px;
-      height: 42px;
+
+    .logo-circle {
+
+      width: 43px;
+
+      height: 43px;
 
       border-radius: 50%;
 
@@ -133,6 +202,7 @@
         1px solid var(--gold);
 
       display: grid;
+
       place-items: center;
 
       color: var(--gold);
@@ -141,105 +211,157 @@
         "Playfair Display",
         serif;
 
-      font-size: 1.5rem;
+      font-size: 1.55rem;
+
     }
+
 
     nav {
+
       display: flex;
-      gap: 28px;
+
       align-items: center;
+
+      gap: 28px;
+
     }
 
+
     nav a {
-      color: #d4d0c7;
+
+      color: #d2cec6;
 
       font-size: 0.92rem;
 
-      transition:
-        0.25s ease;
+      transition: 0.25s;
+
     }
+
 
     nav a:hover {
+
       color: var(--gold-light);
+
     }
 
-    .nav-btn {
-      border:
-        1px solid var(--gold);
+
+    .nav-button {
 
       padding:
         10px 17px;
 
+      border:
+        1px solid var(--gold);
+
       border-radius:
         999px;
+
     }
 
-    /* HERO */
-    
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7,7,7,0.95) 0%,
-      rgba(7,7,7,0.70) 45%,
-      rgba(7,7,7,0.15) 100%
-    ),
-    url("./-8.jpg") center center / cover no-repeat;
-}
+      min-height: 92vh;
 
-    .hero::after {
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+
+      /*
+        IMPORTANT:
+        -8.jpg MUST BE BESIDE index.html
+      */
+
+      background-image:
+
+        linear-gradient(
+          90deg,
+          rgba(5,5,5,0.98) 0%,
+          rgba(5,5,5,0.92) 35%,
+          rgba(5,5,5,0.68) 55%,
+          rgba(5,5,5,0.22) 100%
+        ),
+
+        url("./-8.jpg");
+
+
+      background-size: cover;
+
+      background-position:
+        center center;
+
+      background-repeat:
+        no-repeat;
+
+    }
+
+
+    .hero::before {
 
       content: "";
 
       position: absolute;
 
-      width: 650px;
-      height: 650px;
+      inset: 0;
 
-      border-radius: 50%;
+      background:
 
-      right: -200px;
-      top: 80px;
+        radial-gradient(
+          circle at 80% 50%,
+          rgba(217,184,93,0.10),
+          transparent 30%
+        );
 
-      border:
-        1px solid rgba(216,183,92,0.18);
-
-      box-shadow:
-        0 0 130px rgba(216,183,92,0.08);
+      pointer-events: none;
 
     }
 
+
     .hero-content {
+
       position: relative;
-      z-index: 2;
+
+      z-index: 3;
 
       max-width: 850px;
 
       padding:
         100px 0;
+
     }
 
+
     .eyebrow {
-      color: var(--gold-light);
 
-      text-transform: uppercase;
+      color:
+        var(--gold-light);
 
-      font-size: 0.76rem;
+      text-transform:
+        uppercase;
 
-      font-weight: 700;
+      font-size:
+        0.76rem;
+
+      font-weight:
+        800;
 
       letter-spacing:
         0.20em;
 
       margin-bottom:
-        18px;
+        20px;
+
     }
+
 
     .hero h1 {
 
@@ -251,58 +373,80 @@
         clamp(
           3.8rem,
           8vw,
-          7.5rem
+          7.2rem
         );
 
       line-height:
-        0.95;
+        0.96;
 
       letter-spacing:
         -0.04em;
 
+      max-width:
+        900px;
+
     }
 
+
     .hero h1 span {
+
       color:
         var(--gold);
+
     }
+
 
     .hero-description {
 
       max-width:
         650px;
 
+      color:
+        #c1bcb2;
+
+      font-size:
+        1.08rem;
+
       margin-top:
         28px;
 
-      font-size:
-        1.1rem;
-
-      color:
-        var(--muted);
-
     }
+
 
     .hero-buttons {
 
-      display: flex;
+      display:
+        flex;
 
-      gap: 14px;
+      flex-wrap:
+        wrap;
 
-      flex-wrap: wrap;
+      gap:
+        13px;
 
       margin-top:
         32px;
 
     }
 
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
     .btn {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
+
+      gap:
+        8px;
 
       padding:
         14px 23px;
@@ -313,16 +457,14 @@
       font-weight:
         800;
 
-      border:
-        1px solid transparent;
+      transition:
+        0.25s;
 
       cursor:
         pointer;
 
-      transition:
-        0.25s ease;
-
     }
+
 
     .btn-gold {
 
@@ -334,6 +476,7 @@
 
     }
 
+
     .btn-gold:hover {
 
       background:
@@ -344,15 +487,17 @@
 
     }
 
+
     .btn-outline {
 
-      border-color:
-        rgba(255,255,255,0.20);
+      border:
+        1px solid rgba(255,255,255,0.28);
 
       color:
         white;
 
     }
+
 
     .btn-outline:hover {
 
@@ -364,7 +509,8 @@
 
     }
 
-    .hero-features {
+
+    .hero-points {
 
       display:
         flex;
@@ -379,31 +525,38 @@
         38px;
 
       color:
-        #aaa69d;
+        #b0aba1;
 
       font-size:
-        0.92rem;
+        0.90rem;
 
     }
 
-    /* SECTION */
+
+    /* =========================
+       SECTION TITLE
+    ========================= */
 
     section {
+
       padding:
         100px 0;
+
     }
 
-    .section-heading {
+
+    .section-title {
 
       max-width:
-        780px;
+        760px;
 
       margin-bottom:
         50px;
 
     }
 
-    .section-heading h2 {
+
+    .section-title h2 {
 
       font-family:
         "Playfair Display",
@@ -411,7 +564,7 @@
 
       font-size:
         clamp(
-          2.5rem,
+          2.6rem,
           5vw,
           4.5rem
         );
@@ -424,14 +577,18 @@
 
     }
 
-    .section-heading p {
+
+    .section-title p {
 
       color:
-        var(--muted);
+        var(--gray);
 
     }
 
-    /* PRICING GRID */
+
+    /* =========================
+       PACKAGES
+    ========================= */
 
     .packages {
 
@@ -449,78 +606,87 @@
 
     }
 
+
     .package {
 
+      position:
+        relative;
+
       background:
+
         linear-gradient(
           180deg,
           #121212,
-          #0c0c0c
+          #0b0b0b
         );
 
       border:
         1px solid var(--border);
 
       border-radius:
-        var(--radius);
+        24px;
 
       padding:
         30px;
 
-      position:
-        relative;
-
       transition:
-        0.30s ease;
+        0.30s;
 
     }
+
 
     .package:hover {
 
       transform:
-        translateY(-6px);
+        translateY(-5px);
 
       border-color:
         var(--gold-border);
 
       box-shadow:
-        0 25px 60px rgba(0,0,0,0.35);
+        0 25px 70px
+        rgba(0,0,0,0.40);
 
     }
 
-    .featured {
+
+    .popular {
 
       border-color:
         var(--gold);
 
       box-shadow:
-        0 0 60px rgba(216,183,92,0.08);
+        0 0 55px
+        rgba(217,184,93,0.08);
 
     }
 
-    .deep-package {
+
+    .deep {
 
       grid-column:
         1 / -1;
 
       background:
+
         linear-gradient(
-          110deg,
-          #17140c,
-          #0d0d0d 65%
+          115deg,
+          #18150d,
+          #0b0b0b 70%
         );
 
     }
+
 
     .badge {
 
       position:
         absolute;
 
-      top:
+      right:
         20px;
 
-      right:
+      top:
         20px;
 
       background:
@@ -529,24 +695,25 @@
       color:
         #111;
 
-      font-size:
-        0.68rem;
-
-      font-weight:
-        900;
-
       padding:
         7px 11px;
 
       border-radius:
         999px;
 
+      font-size:
+        0.67rem;
+
+      font-weight:
+        900;
+
       letter-spacing:
-        0.08em;
+        0.07em;
 
     }
 
-    .package-title {
+
+    .package-header {
 
       display:
         flex;
@@ -562,14 +729,16 @@
 
     }
 
-    .package-title-icon {
+
+    .package-icon {
 
       font-size:
         1.8rem;
 
     }
 
-    .package-title small {
+
+    .package-header small {
 
       display:
         block;
@@ -577,30 +746,31 @@
       color:
         var(--gold);
 
+      font-size:
+        0.66rem;
+
       font-weight:
         800;
 
       letter-spacing:
-        0.12em;
-
-      font-size:
-        0.66rem;
+        0.13em;
 
     }
 
-    .package-title h3 {
+
+    .package-header h3 {
 
       font-size:
         1.65rem;
 
-      margin-top:
-        3px;
-
     }
 
-    /* PRICES */
 
-    .price-grid {
+    /* =========================
+       PRICES
+    ========================= */
+
+    .prices {
 
       display:
         grid;
@@ -619,7 +789,8 @@
 
     }
 
-    .price-box {
+
+    .price {
 
       background:
         #171717;
@@ -635,32 +806,37 @@
 
     }
 
-    .price-box span {
 
-      color:
-        #89857d;
-
-      font-size:
-        0.72rem;
+    .price span {
 
       display:
         block;
 
-    }
-
-    .price-box strong {
+      color:
+        #8e8a82;
 
       font-size:
-        1.35rem;
+        0.72rem;
+
+    }
+
+
+    .price strong {
 
       color:
         white;
 
+      font-size:
+        1.30rem;
+
     }
 
-    /* LISTS */
 
-    .services-columns {
+    /* =========================
+       SERVICE LIST
+    ========================= */
+
+    .service-columns {
 
       display:
         grid;
@@ -673,7 +849,8 @@
 
     }
 
-    .services-columns h4 {
+
+    .service-columns h4 {
 
       color:
         var(--gold-light);
@@ -683,30 +860,25 @@
 
     }
 
-    ul {
 
-      list-style:
-        none;
+    .package li {
 
-    }
-
-    li {
-
-      color:
-        #d1cdc4;
+      position:
+        relative;
 
       padding:
         6px 0 6px 21px;
 
-      position:
-        relative;
+      color:
+        #d2cec6;
 
       font-size:
         0.92rem;
 
     }
 
-    li::before {
+
+    .package li::before {
 
       content:
         "✓";
@@ -725,7 +897,8 @@
 
     }
 
-    .double-list {
+
+    .two-columns {
 
       columns:
         2;
@@ -735,7 +908,8 @@
 
     }
 
-    .plus-text {
+
+    .plus {
 
       color:
         var(--gold-light);
@@ -748,25 +922,29 @@
 
     }
 
+
     .note {
-
-      color:
-        #817d75;
-
-      font-size:
-        0.84rem;
 
       margin-top:
         20px;
 
+      color:
+        #888279;
+
+      font-size:
+        0.84rem;
+
     }
 
-    /* WHY US */
 
-    .why-section {
+    /* =========================
+       WHY ELITE
+    ========================= */
+
+    .why {
 
       background:
-        #0d0d0d;
+        #0c0c0c;
 
       border-top:
         1px solid var(--border);
@@ -775,6 +953,7 @@
         1px solid var(--border);
 
     }
+
 
     .why-grid {
 
@@ -787,12 +966,10 @@
       gap:
         70px;
 
-      align-items:
-        start;
-
     }
 
-    .why-title h2 {
+
+    .why h2 {
 
       font-family:
         "Playfair Display",
@@ -800,7 +977,7 @@
 
       font-size:
         clamp(
-          2.6rem,
+          2.7rem,
           5vw,
           4.5rem
         );
@@ -813,6 +990,7 @@
 
     }
 
+
     .why-cards {
 
       display:
@@ -823,7 +1001,11 @@
 
     }
 
+
     .why-card {
+
+      padding:
+        24px;
 
       background:
         #111;
@@ -834,10 +1016,8 @@
       border-radius:
         18px;
 
-      padding:
-        24px;
-
     }
+
 
     .why-card span {
 
@@ -852,32 +1032,34 @@
 
     }
 
+
     .why-card h3 {
 
       margin:
         6px 0;
 
-      font-size:
-        1.3rem;
-
     }
+
 
     .why-card p {
 
       color:
-        var(--muted);
+        var(--gray);
 
     }
 
-    /* BOOK */
 
-    .booking-box {
+    /* =========================
+       BOOKING
+    ========================= */
+
+    .booking {
 
       border:
         1px solid var(--gold-border);
 
       border-radius:
-        26px;
+        28px;
 
       padding:
         60px;
@@ -886,15 +1068,16 @@
 
         radial-gradient(
           circle at 90% 10%,
-          rgba(216,183,92,0.12),
-          transparent 28%
+          rgba(217,184,93,0.12),
+          transparent 30%
         ),
 
-        #0d0d0d;
+        #0c0c0c;
 
     }
 
-    .booking-box h2 {
+
+    .booking h2 {
 
       font-family:
         "Playfair Display",
@@ -902,7 +1085,7 @@
 
       font-size:
         clamp(
-          2.6rem,
+          2.7rem,
           5vw,
           4.5rem
         );
@@ -912,48 +1095,43 @@
 
     }
 
-    .booking-box p {
 
-      max-width:
-        720px;
+    .booking p {
 
       color:
-        var(--muted);
+        var(--gray);
+
+      max-width:
+        760px;
 
     }
 
-    .booking-actions {
+
+    .booking-buttons {
 
       display:
         flex;
 
-      gap:
-        12px;
-
       flex-wrap:
         wrap;
+
+      gap:
+        12px;
 
       margin-top:
         28px;
 
     }
 
-    #copyStatus {
 
-      color:
-        var(--gold-light);
-
-      margin-top:
-        15px;
-
-      min-height:
-        24px;
-
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
+
+      background:
+        #040404;
 
       border-top:
         1px solid var(--border);
@@ -961,10 +1139,8 @@
       padding:
         55px 0 25px;
 
-      background:
-        #050505;
-
     }
+
 
     .footer-grid {
 
@@ -979,13 +1155,15 @@
 
     }
 
+
     footer p,
     footer a {
 
       color:
-        #8c887f;
+        #8e8981;
 
     }
+
 
     footer a {
 
@@ -997,6 +1175,7 @@
 
     }
 
+
     footer a:hover {
 
       color:
@@ -1004,18 +1183,20 @@
 
     }
 
-    .footer-heading {
+
+    .footer-title {
 
       color:
         white;
 
       font-weight:
-        700;
+        800;
 
       margin-bottom:
         10px;
 
     }
+
 
     .copyright {
 
@@ -1036,14 +1217,22 @@
 
     }
 
-    /* MOBILE */
 
-    @media(max-width: 850px) {
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(
+      max-width: 850px
+    ) {
 
       nav {
+
         display:
           none;
+
       }
+
 
       .packages {
 
@@ -1052,12 +1241,14 @@
 
       }
 
-      .deep-package {
+
+      .deep {
 
         grid-column:
           auto;
 
       }
+
 
       .why-grid {
 
@@ -1069,6 +1260,7 @@
 
       }
 
+
       .footer-grid {
 
         grid-template-columns:
@@ -1078,28 +1270,37 @@
 
     }
 
-    @media(max-width: 560px) {
+
+    @media(
+      max-width: 560px
+    ) {
 
       .hero {
 
         min-height:
-          auto;
+          86vh;
+
+        background-position:
+          62% center;
 
       }
+
 
       .hero-content {
 
         padding:
-          80px 0;
+          75px 0;
 
       }
+
 
       .hero h1 {
 
         font-size:
-          3.7rem;
+          3.55rem;
 
       }
+
 
       section {
 
@@ -1108,6 +1309,7 @@
 
       }
 
+
       .package {
 
         padding:
@@ -1115,35 +1317,40 @@
 
       }
 
-      .price-grid {
+
+      .prices {
 
         grid-template-columns:
           1fr 1fr;
 
       }
 
-      .price-box:last-child {
+
+      .price:last-child {
 
         grid-column:
           1 / -1;
 
       }
 
-      .services-columns {
+
+      .service-columns {
 
         grid-template-columns:
           1fr;
 
       }
 
-      .double-list {
+
+      .two-columns {
 
         columns:
           1;
 
       }
 
-      .booking-box {
+
+      .booking {
 
         padding:
           36px 24px;
@@ -1151,29 +1358,32 @@
       }
 
     }
-.hero {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7,7,7,0.95) 0%,
-      rgba(7,7,7,0.70) 45%,
-      rgba(7,7,7,0.15) 100%
-    ),
-    url("-8.jpg") center center / cover no-repeat;
-}
+
+
   </style>
 
 </head>
 
+
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
   <div class="container navbar">
 
-    <a href="#" class="logo">
 
-      <span class="logo-mark">
+    <a
+      href="#"
+      class="logo"
+    >
+
+      <span class="logo-circle">
         E
       </span>
 
@@ -1198,32 +1408,43 @@
 
       <a
         href="#booking"
-        class="nav-btn"
+        class="nav-button"
       >
         Book Now
       </a>
 
     </nav>
 
+
   </div>
 
 </header>
 
 
+
 <main>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
+
   <div class="container">
+
 
     <div class="hero-content">
 
+
       <p class="eyebrow">
-        Premium Mobile Car Detailing
+
+        Premium Mobile
+        Car Detailing
+
       </p>
+
 
       <h1>
 
@@ -1244,16 +1465,18 @@
 
       <p class="hero-description">
 
-        Professional mobile detailing delivered
-        directly to your home or location.
+        Professional mobile detailing
+        delivered directly to your home,
+        workplace, or location.
 
-        Choose the package that fits your vehicle
-        and let Elite handle the rest.
+        Choose the package that fits your
+        vehicle and let Elite handle the rest.
 
       </p>
 
 
       <div class="hero-buttons">
+
 
         <a
           href="#pricing"
@@ -1262,20 +1485,22 @@
           View Packages
         </a>
 
+
         <a
-          href="#booking"
+          href="sms:+14704201001?&body=Hi%20Elite%20Mobile%20Detailing!%0A%0AI%20would%20like%20to%20book%20a%20detail.%0A%0AVehicle%20Year:%0AMake:%0AModel:%0APackage:%0APreferred%20Date%20%26%20Time:%0ALocation:"
           class="btn btn-outline"
         >
-          Book Your Detail
+          💬 Text Us Now
         </a>
+
 
       </div>
 
 
-      <div class="hero-features">
+      <div class="hero-points">
 
         <span>
-          ✓ Mobile Service
+          ✓ We Come To You
         </span>
 
         <span>
@@ -1288,39 +1513,57 @@
 
       </div>
 
+
     </div>
 
+
   </div>
+
 
 </section>
 
 
 
-<!-- SERVICES TITLE -->
+<!-- =========================
+     SERVICES
+========================= -->
 
 <section id="services">
 
+
   <div class="container">
 
-    <div class="section-heading">
+
+    <div class="section-title">
+
 
       <p class="eyebrow">
+
         Elite Detailing Packages
+
       </p>
 
+
       <h2>
-        Choose the clean your vehicle needs.
+
+        Choose the clean
+        your vehicle needs.
+
       </h2>
+
 
       <p>
 
-        From a simple refresh to a deep detail,
-        our packages are designed to make booking
-        easy and pricing clear.
+        From a quick refresh
+        to a complete deep detail,
+        choose the service that
+        fits your vehicle.
 
       </p>
 
+
     </div>
+
 
 
     <div
@@ -1330,15 +1573,20 @@
 
 
 
-<!-- BASIC DETAIL -->
+<!-- =========================
+     BASIC DETAIL
+========================= -->
 
 <article class="package">
 
-  <div class="package-title">
 
-    <span class="package-title-icon">
+  <div class="package-header">
+
+
+    <span class="package-icon">
       🚿
     </span>
+
 
     <div>
 
@@ -1352,12 +1600,15 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="price-grid">
 
-    <div class="price-box">
+  <div class="prices">
+
+
+    <div class="price">
 
       <span>
         Sedan
@@ -1370,7 +1621,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         SUV
@@ -1383,7 +1634,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         Large
@@ -1395,10 +1646,13 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="services-columns">
+
+  <div class="service-columns">
+
 
     <div>
 
@@ -1441,6 +1695,7 @@
     </div>
 
 
+
     <div>
 
       <h4>
@@ -1473,21 +1728,28 @@
 
     </div>
 
+
   </div>
+
 
 </article>
 
 
 
-<!-- INTERIOR -->
+<!-- =========================
+     INTERIOR DETAIL
+========================= -->
 
 <article class="package">
 
-  <div class="package-title">
 
-    <span class="package-title-icon">
+  <div class="package-header">
+
+
+    <span class="package-icon">
       🧼
     </span>
+
 
     <div>
 
@@ -1501,12 +1763,15 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="price-grid">
 
-    <div class="price-box">
+  <div class="prices">
+
+
+    <div class="price">
 
       <span>
         Sedan
@@ -1519,7 +1784,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         SUV
@@ -1532,7 +1797,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         Large
@@ -1544,10 +1809,12 @@
 
     </div>
 
+
   </div>
 
 
-  <ul class="double-list">
+
+  <ul class="two-columns">
 
     <li>
       Deep Vacuum
@@ -1586,7 +1853,8 @@
     </li>
 
     <li>
-      Fabric Seat Shampoo or Leather Cleaning
+      Fabric Seat Shampoo
+      or Leather Cleaning
     </li>
 
     <li>
@@ -1611,19 +1879,25 @@
 
   </ul>
 
+
 </article>
 
 
 
-<!-- EXTERIOR -->
+<!-- =========================
+     EXTERIOR DETAIL
+========================= -->
 
 <article class="package">
 
-  <div class="package-title">
 
-    <span class="package-title-icon">
+  <div class="package-header">
+
+
+    <span class="package-icon">
       ✨
     </span>
+
 
     <div>
 
@@ -1637,12 +1911,15 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="price-grid">
 
-    <div class="price-box">
+  <div class="prices">
+
+
+    <div class="price">
 
       <span>
         Sedan
@@ -1655,7 +1932,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         SUV
@@ -1668,7 +1945,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         Large
@@ -1680,7 +1957,9 @@
 
     </div>
 
+
   </div>
+
 
 
   <ul>
@@ -1710,29 +1989,38 @@
     </li>
 
     <li>
-      Spray Wax / Paint Protection
+      Spray Wax /
+      Paint Protection
     </li>
 
   </ul>
+
 
 </article>
 
 
 
-<!-- FULL DETAIL -->
+<!-- =========================
+     FULL DETAIL
+========================= -->
 
-<article class="package featured">
+<article class="package popular">
+
 
   <span class="badge">
+
     MOST POPULAR
+
   </span>
 
 
-  <div class="package-title">
+  <div class="package-header">
 
-    <span class="package-title-icon">
+
+    <span class="package-icon">
       ⭐
     </span>
+
 
     <div>
 
@@ -1746,12 +2034,15 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="price-grid">
 
-    <div class="price-box">
+  <div class="prices">
+
+
+    <div class="price">
 
       <span>
         Sedan
@@ -1764,7 +2055,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         SUV
@@ -1777,7 +2068,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         Large
@@ -1789,10 +2080,13 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="services-columns">
+
+  <div class="service-columns">
+
 
     <div>
 
@@ -1807,7 +2101,8 @@
         </li>
 
         <li>
-          Dashboard & Center Console
+          Dashboard &
+          Center Console
         </li>
 
         <li>
@@ -1871,6 +2166,7 @@
     </div>
 
 
+
     <div>
 
       <h4>
@@ -1904,28 +2200,36 @@
         </li>
 
         <li>
-          Spray Wax / Paint Protection
+          Spray Wax /
+          Paint Protection
         </li>
 
       </ul>
 
     </div>
 
+
   </div>
+
 
 </article>
 
 
 
-<!-- DEEP DETAIL -->
+<!-- =========================
+     DEEP DETAIL
+========================= -->
 
-<article class="package deep-package">
+<article class="package deep">
 
-  <div class="package-title">
 
-    <span class="package-title-icon">
+  <div class="package-header">
+
+
+    <span class="package-icon">
       🥇
     </span>
+
 
     <div>
 
@@ -1939,12 +2243,15 @@
 
     </div>
 
+
   </div>
 
 
-  <div class="price-grid">
 
-    <div class="price-box">
+  <div class="prices">
+
+
+    <div class="price">
 
       <span>
         Sedan
@@ -1957,7 +2264,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         SUV
@@ -1970,7 +2277,7 @@
     </div>
 
 
-    <div class="price-box">
+    <div class="price">
 
       <span>
         Large
@@ -1982,18 +2289,21 @@
 
     </div>
 
+
   </div>
 
 
-  <p class="plus-text">
 
-    Everything included in
-    Full Detail, plus:
+  <p class="plus">
+
+    Everything included
+    in Full Detail, plus:
 
   </p>
 
 
-  <ul class="double-list">
+
+  <ul class="two-columns">
 
     <li>
       Extra-Deep Vacuum
@@ -2038,13 +2348,18 @@
   </ul>
 
 
+
   <p class="note">
 
-    Deep Detail prices are starting prices.
-    Final pricing may vary depending on
-    vehicle size and condition.
+    Deep Detail prices are
+    starting prices.
+
+    Final pricing may vary
+    depending on vehicle size
+    and condition.
 
   </p>
+
 
 </article>
 
@@ -2052,26 +2367,34 @@
 
     </div>
 
+
   </div>
+
 
 </section>
 
 
 
-<!-- WHY ELITE -->
+<!-- =========================
+     WHY ELITE
+========================= -->
 
 <section
-  class="why-section"
+  class="why"
   id="why"
 >
 
+
   <div class="container why-grid">
 
-    <div class="why-title">
+
+    <div>
+
 
       <p class="eyebrow">
         Why Elite
       </p>
+
 
       <h2>
 
@@ -2080,7 +2403,9 @@
 
       </h2>
 
+
     </div>
+
 
 
     <div class="why-cards">
@@ -2088,90 +2413,119 @@
 
       <div class="why-card">
 
+
         <span>
           01
         </span>
+
 
         <h3>
           We Come To You
         </h3>
 
+
         <p>
 
-          Convenient mobile detailing
-          at your home, workplace,
+          Mobile detailing
+          at your home,
+          workplace,
           or preferred location.
 
         </p>
 
+
       </div>
 
 
+
       <div class="why-card">
+
 
         <span>
           02
         </span>
 
+
         <h3>
           Clear Pricing
         </h3>
 
+
         <p>
 
-          Easy-to-understand packages
-          based on your vehicle size
-          and detailing needs.
+          Easy-to-understand
+          packages for different
+          vehicle sizes and needs.
 
         </p>
+
 
       </div>
 
 
+
       <div class="why-card">
+
 
         <span>
           03
         </span>
 
+
         <h3>
-          Detail-Focused
+          Professional Finish
         </h3>
+
 
         <p>
 
-          Every service is focused on
-          making your vehicle cleaner,
-          fresher and professionally finished.
+          Interior and exterior
+          care focused on making
+          your vehicle look its best.
 
         </p>
+
 
       </div>
 
 
     </div>
 
+
   </div>
+
 
 </section>
 
 
 
-<!-- BOOKING -->
+<!-- =========================
+     BOOKING
+========================= -->
 
 <section id="booking">
 
+
   <div class="container">
 
-    <div class="booking-box">
+
+    <div class="booking">
+
 
       <p class="eyebrow">
+
         Ready To Book?
+
       </p>
 
+
       <h2>
-        Give your vehicle the Elite treatment.
+
+        Give your vehicle
+        the Elite treatment.
+
       </h2>
+
 
       <p>
 
@@ -2180,64 +2534,109 @@
         preferred date and location.
 
         For Deep Detail,
-        send a few photos so the
-        final price can be confirmed.
+        send a few photos so
+        final pricing can be confirmed.
 
       </p>
 
 
-      <div class="booking-actions">
 
-  <a
-    href="sms:+14704201001?&body=Hi%20Elite%20Mobile%20Detailing!%20I%20would%20like%20to%20book%20a%20detail.%0A%0AVehicle%20Year:%0AMake:%0AModel:%0APackage:%0APreferred%20Date%20%26%20Time:%0ALocation:"
-    class="btn btn-gold"
-  >
-    💬 Text Us Now
-  </a>
-
-  <a
-    href="#pricing"
-    class="btn btn-outline"
-  >
-    Review Packages
-  </a>
-
-</div>
+      <div class="booking-buttons">
 
 
-      <p id="copyStatus"></p>
+        <a
+
+          href="sms:+14704201001?&body=Hi%20Elite%20Mobile%20Detailing!%0A%0AI%20would%20like%20to%20book%20a%20detail.%0A%0AVehicle%20Year:%0AMake:%0AModel:%0APackage:%0APreferred%20Date%20%26%20Time:%0ALocation:"
+
+          class="btn btn-gold"
+
+        >
+
+          💬 Text Us Now
+
+        </a>
+
+
+
+        <a
+
+          href="tel:+14704201001"
+
+          class="btn btn-outline"
+
+        >
+
+          📞 Call Now
+
+        </a>
+
+
+
+        <a
+
+          href="#pricing"
+
+          class="btn btn-outline"
+
+        >
+
+          View Packages
+
+        </a>
+
+
+      </div>
+
 
     </div>
 
+
   </div>
 
+
 </section>
+
 
 
 </main>
 
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
 
   <div class="container footer-grid">
 
 
     <div>
 
+
       <div class="logo">
 
-        <span class="logo-mark">
+
+        <span class="logo-circle">
           E
         </span>
 
+
         ELITE MOBILE DETAILING
+
 
       </div>
 
-      <p style="margin-top:15px;">
 
-        Premium mobile car detailing.
+      <p
+        style="
+          margin-top:15px;
+        "
+      >
+
+        Professional mobile
+        car detailing.
 
         <br>
 
@@ -2245,14 +2644,20 @@
 
       </p>
 
+
     </div>
+
 
 
     <div>
 
-      <p class="footer-heading">
+
+      <p class="footer-title">
+
         Services
+
       </p>
+
 
       <a href="#pricing">
         Basic Detail
@@ -2274,26 +2679,45 @@
         Deep Detail
       </a>
 
+
     </div>
+
 
 
     <div>
 
-      <p class="footer-heading">
-        Elite
+
+      <p class="footer-title">
+
+        Contact
+
       </p>
 
-      <a href="#why">
-        Why Elite
+
+      <a
+        href="sms:+14704201001"
+      >
+
+        Text Us
+
       </a>
+
+
+      <a
+        href="tel:+14704201001"
+      >
+
+        (470) 420-1001
+
+      </a>
+
 
       <a href="#booking">
+
         Book Now
+
       </a>
 
-      <a href="#pricing">
-        Pricing
-      </a>
 
     </div>
 
@@ -2301,14 +2725,18 @@
   </div>
 
 
+
   <div class="container copyright">
 
-    © <span id="year"></span>
+    ©
+    <span id="year"></span>
+
     Elite Mobile Detailing.
 
     All rights reserved.
 
   </div>
+
 
 </footer>
 
@@ -2316,51 +2744,15 @@
 
 <script>
 
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
 
+  document
+    .getElementById(
+      "year"
+    )
+    .textContent =
+      new Date()
+      .getFullYear();
 
-  function copyBooking() {
-
-    const message =
-
-`Hi Elite Mobile Detailing!
-
-I would like to book a detail.
-
-Vehicle Year:
-Make:
-Model:
-
-Package:
-
-Preferred Date & Time:
-
-Location:
-
-Thank you!`;
-
-
-    navigator.clipboard
-      .writeText(message)
-      .then(() => {
-
-        document.getElementById(
-          "copyStatus"
-        ).innerText =
-          "Booking message copied!";
-
-      })
-      .catch(() => {
-
-        document.getElementById(
-          "copyStatus"
-        ).innerText =
-          "Please copy the booking information manually.";
-
-      });
-
-  }
 
 </script>
 
